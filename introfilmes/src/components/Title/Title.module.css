@@ -1,0 +1,20 @@
+.header {
+  background-color: #1F4B7A;
+  color: white;
+  /* font-family: 'Roboto'; */
+  height: 200px;
+  justify-content: space-between;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0px 48px;
+}
+
+.header h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.mainTitle {
+  max-width: 300px;
+}

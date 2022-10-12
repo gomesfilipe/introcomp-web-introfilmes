@@ -1,3 +1,10 @@
 .header {
-  background-color: #064975;
+  background-color: #217DA5;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 5px;
+  /* position: absolute;
+  top: 0; */
 }

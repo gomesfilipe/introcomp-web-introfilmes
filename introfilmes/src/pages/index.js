@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
+import { Title } from '../components/Title'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -13,14 +15,15 @@ export default function Home() {
       </Head>
 
       <Header />
-
-      <main className={styles.main}>
+      <Title />
+      <Footer />
+      {/* <main className={styles.main}>
         TESTANDO
       </main>
 
       <footer className={styles.footer}>
         footer
-      </footer>
+      </footer> */}
     </div>
   )
 }

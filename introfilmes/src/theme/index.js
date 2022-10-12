@@ -1,4 +1,4 @@
-export const theme = {
+const theme = {
   colors: {
     primary_dark: '#064975',
     primary: '#217DA5',
@@ -17,3 +17,5 @@ export const theme = {
     regular: 'Roboto',
   },
 }
+
+module.exports = theme
