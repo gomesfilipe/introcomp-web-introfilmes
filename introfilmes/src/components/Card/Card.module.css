@@ -1,0 +1,30 @@
+.card {
+  background-color: #217DA5;
+  height: 299px;
+  width: 203px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.image {
+  height: 76px;
+  width: 76px;
+}
+
+.button {
+  background-color: #217DA5;
+  border-width: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  /* color: #FFFF; */
+  border: 1px solid #F4C708;
+  border-radius: 50%;
+}

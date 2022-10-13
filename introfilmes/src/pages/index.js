@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { Card } from '../components/Card'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Title } from '../components/Title'
@@ -16,6 +17,7 @@ export default function Home() {
 
       <Header />
       <Title />
+      <Card />
       <Footer />
       {/* <main className={styles.main}>
         TESTANDO
