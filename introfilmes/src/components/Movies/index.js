@@ -1,24 +1,54 @@
 import styles from './Movies.module.css'
 import { Card } from "../Card";
+import { useState } from 'react';
+import { Movie } from '../Movie';
+
+const moviesList = [
+  {
+    name: 'O Rei Leão',
+    year: 1994,
+    description: 'Rei leão blablabla',
+    photo: 'https://picsum.photos/500/800',
+    evaluation: 4
+  },
+  // {
+  //   name: 'Toy Story',
+  //   year: 2000,
+  //   description: 'Toy story blablabla',
+  //   photo: 'https://picsum.photos/400/800',
+  //   evaluation: 5
+  // },
+  // {
+  //   name: 'Os incríveis',
+  //   year: 2005,
+  //   description: 'Os incríveis blablabla',
+  //   photo: 'https://picsum.photos/700/800',
+  //   evaluation: 5
+  // },
+]
 
 export function Movies() {
-  const movies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  
+  const [movies, setMovies] = useState(moviesList)
+
   return (
     <div className={styles.movies}>
       <h2>CATÁLOGO</h2>
       <div className={styles.cards}>
-        {/* <ul> */}
           {
-            movies.map((key, card) => {
+            movies.map((movie, index) => {
               return (
-                // <li>
-                  <Card />
-                // {/* </li>  */}
+                <Movie 
+                  key={index} 
+                  name={movie.name} 
+                  year={movie.year} 
+                  description={movie.description} 
+                  photo={movie.photo} 
+                  evaluation={movie.evaluation} 
+                />
               ) 
             })
           }
-        {/* </ul> */}
+          <Card key={movies.length} />
       </div>
     </div>
   )

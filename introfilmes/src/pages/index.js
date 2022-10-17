@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { Card } from '../components/Card'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
+import { Movie } from '../components/Movie'
+import { MovieData } from '../components/MovieData'
 import { Movies } from '../components/Movies'
 import { Title } from '../components/Title'
 import styles from '../styles/Home.module.css'
@@ -20,13 +22,6 @@ export default function Home() {
       <Title />
       <Movies />
       <Footer />
-      {/* <main className={styles.main}>
-        TESTANDO
-      </main>
-
-      <footer className={styles.footer}>
-        footer
-      </footer> */}
     </div>
   )
 }
