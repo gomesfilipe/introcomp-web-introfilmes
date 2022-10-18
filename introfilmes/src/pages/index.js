@@ -6,6 +6,7 @@ import { Header } from '../components/Header'
 import { Movie } from '../components/Movie'
 import { MovieData } from '../components/MovieData'
 import { Movies } from '../components/Movies'
+import { Stars } from '../components/Stars'
 import { Title } from '../components/Title'
 import styles from '../styles/Home.module.css'
 

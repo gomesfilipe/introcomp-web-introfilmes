@@ -9,7 +9,7 @@ const moviesList = [
     year: 1994,
     description: 'Rei leão blablabla',
     photo: 'https://picsum.photos/500/800',
-    evaluation: 4
+    evaluation: 3
   },
   // {
   //   name: 'Toy Story',

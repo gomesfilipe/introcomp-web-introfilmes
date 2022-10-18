@@ -1,0 +1,16 @@
+.container {
+  background-color: transparent;
+  display: inline-flex;
+}
+
+.button {
+  background-color: transparent;
+  padding: 0px;
+  border: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
