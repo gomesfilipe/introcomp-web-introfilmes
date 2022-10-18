@@ -1,6 +1,7 @@
 import styles from './Movie.module.css'
 import Image from 'next/image'
 import { MovieData } from '../MovieData';
+import { Popover } from '@headlessui/react';
 
 export function Movie({ name, year, description, photo, evaluation }) {
   const myLoader=({src})=>{
@@ -8,16 +9,14 @@ export function Movie({ name, year, description, photo, evaluation }) {
   }
   
   return (
-    <div>
-      <div className={styles.movie}>
-        <button className={styles.button}>
-          <div className={styles.image}>
-            <Image className={styles.photo} loader={myLoader} src={photo} width={203} height ={299} />
-          </div>
-        </button>
-      </div>
-  
-      <MovieData name={name} year={year} description={description} photo={photo} evaluation={evaluation}/>
-    </div>
+    <Popover className={styles.popover}>
+      <Popover.Button className={styles.popoverButton}>
+        <Image className={styles.photo} loader={myLoader} src={photo} width={203} height ={299} />
+      </Popover.Button>
+
+      <Popover.Panel>
+        <MovieData name={name} year={year} description={description} photo={photo} evaluation={evaluation}/>
+      </Popover.Panel>
+    </Popover>
   )
 }

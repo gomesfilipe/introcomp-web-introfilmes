@@ -7,30 +7,23 @@ import { useState } from 'react'
 import { Stars } from '../Stars'
 
 export function MovieData({ name, year, description, photo, evaluation }) {
-  const [stars, setStars] = useState([5, 4, 3, 2, 1])
-  
   return (
     <div className={styles.container}>
-      <div className={styles.photo}> {/* Foto do filme */}
-        {/* <Image width="100%" height="100%" layout="fill" objectFit="contain" src={photo} /> Está renderizando imagem diferente */}
+      <div className={styles.photo}> {/** foto */}
+        <Image src={photo} width={100} height={130} />
       </div>
 
-      <div className={styles.movieData}> {/* Dados do filme */}
-        <div className={styles.data}>
-          <div className={styles.titleYear}> {/* Nome do filme e ano */}
-            <h2>{name}</h2>
-            <h3>{year}</h3>
-          </div>
-          
-          <div className={styles.data}> {/* Avaliação do filme e botão de delete */}
-            <Stars evaluation={evaluation} readOnly={true}/>
-            <button className={styles.deleteButton}>
-              <Image src={IconTrash} />
-            </button>
-          </div>
+      <div className={styles.data}> { /** dados */ }
+        <div className={styles.dataUp}>
+          <h2>{name}</h2>
+          <h3>{year}</h3>
+          <Stars evaluation={evaluation} readOnly={true} />
+          <button className={styles.deleteButton}>
+            <Image src={IconTrash} />
+          </button>
         </div>
         
-        <div> {/* Descrição do filme */}
+        <div className={styles.dataDown}>
           <p>{description}</p>
         </div>
       </div>

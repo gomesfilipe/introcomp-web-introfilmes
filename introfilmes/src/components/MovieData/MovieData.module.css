@@ -2,39 +2,34 @@
   background-color: #F4C708;
   display: flex;
   padding-top: 19px;
-  /* width: 100%; */
-}
-
-.data {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-}
-
-.titleYear {
-  display: flex;
-}
-
-.titleYear h2 {
-  padding-right: 7px;
-}
-
-.titleYear h3 {
-  align-items: center;
-  display: flex;
-  margin: 0px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 5px; 
 }
 
 .photo {
-  width: 418px;
-  height: 165px;
-  background-color: antiquewhite;
+  padding: 0px;
+  display: flex;
+  align-items: center;
 }
 
-.movieData {
+.data {
   background-color: #217DA5;
   color: white;
-  padding: 10px;
+  width: 500px;
+}
+
+.dataUp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dataDown {
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .deleteButton {

@@ -1,26 +1,18 @@
-.movie {
-  background-color: #217DA5;
+.popover {
+  /* display: inline-block; */
+  align-items: center;
+}
+
+.popoverButton {
+  border: 0px;
+  padding: 0px;
+  border-radius: 5px;
   height: 299px;
   width: 203px;
-  border-radius: 5px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   margin: 10px;
 }
 
-.button {
-  padding: 0px;
-  border: 0px;
-  border-radius: 5px;
-}
-
-.image {
-  height: 299px;
-  width: 203px;
-  padding: 0px;
-  margin: 0px;
-}
 
 .photo {
   height: 299px;
@@ -29,7 +21,6 @@
   border-radius: 5px;
 }
 
-.movie:hover {
-  /* border: 1px solid #F4C708; */
+.popoverButton:hover {
   opacity: 0.8;
 }
