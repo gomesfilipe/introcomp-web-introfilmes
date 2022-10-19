@@ -1,3 +1,100 @@
 .container {
-  background-color: white;
+  background-color: #F4C708;
+  display: flex;
+  padding-top: 19px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 5px; 
+}
+
+.photo {
+  background-color: #89BFCC;
+  /* display: flex; */
+  text-align: center;
+  /* align-items: center; */
+  padding: 20px;
+  width: 250px;
+}
+
+.data {
+  background-color: #217DA5;
+  color: white;
+  width: 950px;
+  padding: 20px;
+}
+
+.dataUp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dataDown {
+  display: flex;
+  justify-content: left;
+}
+
+.submitButton:hover {
+  opacity: 0.8;
+}
+
+.submitButton {
+  text-align: right;
+  padding: 5px;
+}
+
+.submitButton button {
+  background-color: #F4C708;
+  border: 0px;
+  color: #217DA5;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 172px;
+  height: 25px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 50px;
+}
+
+.year {
+  font-size: 17px;
+}
+
+.description {
+  font-size: 15px;
+  width: 100%;
+}
+
+.myInput {
+  background-color: transparent;
+  border: 0px;
+  color: #89BFCC;
+  font-style: italic;
+}
+
+.myInput::placeholder {
+  color: #89BFCC;
+  font-weight: bold;
+}
+
+.myInput:focus {
+  outline: none;
+}
+
+.link {
+  background-color: transparent;
+  border: 0px;
+  color: #217DA5;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.link::placeholder {
+  color: #217DA5;
+}
+
+.link:focus {
+  outline: none;
 }
