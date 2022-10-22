@@ -11,7 +11,7 @@ export function Movie({ name, year, description, photo, evaluation }) {
   return (
     <Popover className={styles.popover}>
       <Popover.Button className={styles.popoverButton}>
-        <Image className={styles.photo} loader={myLoader} src={photo} width={203} height ={299} />
+        <Image className={styles.photo} loader={myLoader} src={photo} layout="fill" objectFit="cover" />
       </Popover.Button>
 
       <Popover.Panel>
