@@ -7,7 +7,7 @@ import { Popover } from '@headlessui/react'
 import { Form } from '../Form'
 
 
-export function Card() {
+export function Card({ movies, setMovies }) {
   const [mouseOver, setMouseOver] = useState(false)
   
   return (
@@ -27,7 +27,7 @@ export function Card() {
       </Popover.Button>
 
       <Popover.Panel>
-        <Form />
+        <Form movies={movies} setMovies={setMovies}/>
       </Popover.Panel>
     </Popover>
     

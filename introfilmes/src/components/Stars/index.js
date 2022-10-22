@@ -4,7 +4,7 @@ import IconYellowStar from '../../assets/icons/icon-yellow-star.svg'
 import { useState } from 'react'
 import Image from 'next/image'
 
-export function Stars({ evaluation, readOnly }) {
+export function Stars({ evaluation, readOnly, setEvaluation }) {
   const [stars, setStars] = useState([5, 4, 3, 2, 1])
   const [screenEvaluation, setScreenEvaluation] = useState(evaluation || 0)
   const [realEvaluation, setRealEvaluation] = useState(evaluation || 0)
@@ -24,6 +24,7 @@ export function Stars({ evaluation, readOnly }) {
     if(readOnly) return
     setRealEvaluation(evaluation)
     setScreenEvaluation(evaluation)
+    setEvaluation(evaluation)
   }
 
   return (

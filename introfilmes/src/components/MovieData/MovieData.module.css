@@ -7,34 +7,22 @@
   z-index: 1;
   right: 0px;
   left: 0px;
-  /* box-shadow: 0px 2px 5px black; */
   height: 150px;
 }
 
 .photo {
-  /* padding: 0px; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* width: 100%;
-  height: 100%; */
   position: relative;
-
 }
 
 .data {
   background-color: #217DA5;
   color: white;
   padding: 0px 19px;
-  /* width: 500px; */
-  /* width: 100%; */
 }
 
 .dataUp {
   display: flex;
-  /* grid-template-columns: 1fr 1fr; */
   align-items: center;
-  /* width: 100%;
-  column-gap: 20px; */
   justify-content: space-between;
 }
 
@@ -53,14 +41,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* text-align: center; */
 } 
 
 .dataDown {
   display: flex;
   justify-content: left;
-  /* padding-left: 20px;
-  padding-right: 20px; */
 }
 
 .deleteButton {

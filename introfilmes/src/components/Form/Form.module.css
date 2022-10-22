@@ -1,10 +1,10 @@
 .container {
   background-color: #F4C708;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   padding-top: 19px;
   position: absolute;
   z-index: 1;
-  border-radius: 5px;
   right: 0px;
   left: 0px;
   height: 150px;
@@ -13,18 +13,17 @@
 .photo {
   background-color: #89BFCC;
   display: flex;
-  text-align: center;
   padding: 20px;
-  width: 100%;
+  /* width: 100%; */
   justify-content: space-between;
-  flex:1;
+  /* position: relative; */
 }
 
 .data {
   background-color: #217DA5;
   color: white;
-  padding: 20px;
-  width: 100%;
+  padding: 0px 19px;
+  /* width: 100%; */
 }
 
 .dataUp {
@@ -93,6 +92,7 @@
   color: #217DA5;
   font-size: 17px;
   font-weight: bold;
+  font-style: italic;
 }
 
 .link::placeholder {
