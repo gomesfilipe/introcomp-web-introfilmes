@@ -10,17 +10,22 @@ export function MovieData({ name, year, description, photo, evaluation }) {
   return (
     <div className={styles.container}>
       <div className={styles.photo}> {/** foto */}
-        <Image src={photo} width={"100%"} height={"130%"} />
+        <Image src={photo} layout="fill" objectFit="cover" />
       </div>
 
       <div className={styles.data}> { /** dados */ }
         <div className={styles.dataUp}>
-          <h2>{name}</h2>
-          <h3>{year}</h3>
-          <Stars evaluation={evaluation} readOnly={true} />
-          <button className={styles.deleteButton}>
-            <Image src={IconTrash} />
-          </button>
+          <div>
+            <span className={styles.name}>{name}</span>
+            <span className={styles.year}>{year}</span>
+          </div>
+          
+          <div>
+            <Stars evaluation={evaluation} readOnly={true} />
+            <button className={styles.deleteButton}>
+              <Image src={IconTrash} />
+            </button>
+          </div>
         </div>
         
         <div className={styles.dataDown}>

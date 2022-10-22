@@ -1,39 +1,66 @@
 .container {
   background-color: #F4C708;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   padding-top: 19px;
   position: absolute;
   z-index: 1;
-  border-radius: 5px;
   right: 0px;
   left: 0px;
+  /* box-shadow: 0px 2px 5px black; */
+  height: 150px;
 }
 
 .photo {
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  width: 100%;
+  /* padding: 0px; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+
 }
 
 .data {
   background-color: #217DA5;
   color: white;
+  padding: 0px 19px;
   /* width: 500px; */
-  width: 100%;
+  /* width: 100%; */
 }
 
 .dataUp {
   display: flex;
+  /* grid-template-columns: 1fr 1fr; */
   align-items: center;
-  justify-content: space-around;
+  /* width: 100%;
+  column-gap: 20px; */
+  justify-content: space-between;
 }
+
+.name {
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.year {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dataUp > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* text-align: center; */
+} 
 
 .dataDown {
   display: flex;
   justify-content: left;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
 }
 
 .deleteButton {
@@ -42,6 +69,7 @@
   padding: 0px;
   border: 0px;
   background-color: transparent;
+  margin-left: 15px;
 }
 
 .deleteButton:hover {
