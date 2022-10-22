@@ -4,23 +4,26 @@
   padding-top: 19px;
   position: absolute;
   z-index: 1;
-  border-radius: 5px; 
+  border-radius: 5px;
+  right: 0px;
+  left: 0px;
 }
 
 .photo {
   background-color: #89BFCC;
-  /* display: flex; */
+  display: flex;
   text-align: center;
-  /* align-items: center; */
   padding: 20px;
-  width: 250px;
+  width: 100%;
+  justify-content: space-between;
+  flex:1;
 }
 
 .data {
   background-color: #217DA5;
   color: white;
-  width: 950px;
   padding: 20px;
+  width: 100%;
 }
 
 .dataUp {

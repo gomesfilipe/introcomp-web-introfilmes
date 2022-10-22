@@ -4,19 +4,23 @@
   padding-top: 19px;
   position: absolute;
   z-index: 1;
-  border-radius: 5px; 
+  border-radius: 5px;
+  right: 0px;
+  left: 0px;
 }
 
 .photo {
   padding: 0px;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .data {
   background-color: #217DA5;
   color: white;
-  width: 500px;
+  /* width: 500px; */
+  width: 100%;
 }
 
 .dataUp {

@@ -10,7 +10,7 @@ export function MovieData({ name, year, description, photo, evaluation }) {
   return (
     <div className={styles.container}>
       <div className={styles.photo}> {/** foto */}
-        <Image src={photo} width={100} height={130} />
+        <Image src={photo} width={"100%"} height={"130%"} />
       </div>
 
       <div className={styles.data}> { /** dados */ }
