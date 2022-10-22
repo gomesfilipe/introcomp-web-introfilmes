@@ -6,7 +6,11 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Stars } from '../Stars'
 
-export function MovieData({ name, year, description, photo, evaluation }) {
+export function MovieData({ name, year, description, photo, evaluation, movies, setMovies, index }) {
+  function handleClickDeleteButton() {
+    setMovies(movies.filter((movie, indexMovie) => indexMovie !== index))
+  }
+  
   return (
     <div className={styles.container}>
       <div className={styles.photo}> {/** foto */}
@@ -22,7 +26,7 @@ export function MovieData({ name, year, description, photo, evaluation }) {
           
           <div>
             <Stars evaluation={evaluation} readOnly={true} />
-            <button className={styles.deleteButton}>
+            <button className={styles.deleteButton} onClick={handleClickDeleteButton}>
               <Image src={IconTrash} />
             </button>
           </div>

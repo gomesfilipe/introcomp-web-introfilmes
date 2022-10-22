@@ -3,11 +3,12 @@ import Image from 'next/image'
 import { MovieData } from '../MovieData';
 import { Popover } from '@headlessui/react';
 
-export function Movie({ name, year, description, photo, evaluation }) {
+export function Movie({ name, year, description, photo, evaluation, movies, setMovies, index }) {
   const myLoader=({src})=>{
     return `${src}`;
   }
   
+  console.log('movie: ', index)
   return (
     <Popover className={styles.popover}>
       <Popover.Button className={styles.popoverButton}>
@@ -27,6 +28,9 @@ export function Movie({ name, year, description, photo, evaluation }) {
           description={description} 
           photo={photo} 
           evaluation={evaluation}
+          movies={movies}
+          setMovies={setMovies}
+          index={index}
         />
       </Popover.Panel>
     </Popover>

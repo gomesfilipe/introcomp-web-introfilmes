@@ -34,6 +34,9 @@ export function Movies() {
                   description={movie.description} 
                   photo={movie.photo} 
                   evaluation={movie.evaluation} 
+                  movies = {movies}
+                  setMovies={setMovies}
+                  index={index}
                 />
               ) 
             })
