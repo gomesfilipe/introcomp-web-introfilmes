@@ -19,7 +19,8 @@ export function Stars({ evaluation, readOnly }) {
     setScreenEvaluation(realEvaluation)
   } 
 
-  function handleClick(evaluation) {
+  function handleClick(event, evaluation) {
+    event.preventDefault()
     if(readOnly) return
     setRealEvaluation(evaluation)
     setScreenEvaluation(evaluation)
@@ -35,7 +36,7 @@ export function Stars({ evaluation, readOnly }) {
               className={styles.button}
               onMouseEnter={() => {handleMouseEnter(item)}} 
               onMouseLeave={handleMouseLeave} 
-              onClick={() => {handleClick(item)}}
+              onClick={(e) => {handleClick(e, item)}}
             > 
               <Image src={item > screenEvaluation ? IconBlueStar : IconYellowStar} />
             </button>
