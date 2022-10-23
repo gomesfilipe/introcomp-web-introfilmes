@@ -4,6 +4,7 @@ import { MovieData } from '../MovieData';
 import { Popover } from '@headlessui/react';
 
 export function Movie({ name, year, description, photo, evaluation, movies, setMovies, index }) {
+
   const myLoader=({src})=>{
     return `${src}`;
   }
@@ -19,7 +20,7 @@ export function Movie({ name, year, description, photo, evaluation, movies, setM
           objectFit="cover" 
         />
       </Popover.Button>
-
+      
       <Popover.Panel>
         {({ close }) => (
           <MovieData 

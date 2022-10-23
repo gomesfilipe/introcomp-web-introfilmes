@@ -2,7 +2,7 @@ import { Stars } from '../Stars'
 import IconPhoto from '../../assets/icons/icon-photo.svg'
 import Image from 'next/image'
 import styles from './Form.module.css'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export function Form({ movies, setMovies }) {
   const [name, setName] = useState('')
@@ -11,14 +11,22 @@ export function Form({ movies, setMovies }) {
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
   
+  const [fileName, setFileName] = useState('')
+  const hiddenFileInput = useRef(null);
+
+  function handleDisabledSubmit() {
+    return !name || !year || !evaluation || !description || !photo
+  }
+
   function handleUploadPhoto(event) {
     const reader = new FileReader()
 
     reader.onload = function (e) {
       setPhoto(e.target.result)
     } 
-
+    
     reader.readAsDataURL(event.target.files[0])
+    setFileName(event.target.files[0].name)
   }
 
   function handleSubmitForm(event) {
@@ -44,13 +52,28 @@ export function Form({ movies, setMovies }) {
     setMovies([...movies, newMovie])
   }
 
+  function handleClickUpload(event) {
+    event.preventDefault()
+    hiddenFileInput.current.click();
+  }
+
   return (
     <form className={styles.container} onSubmit={(e) => {handleSubmitForm(e)}}>
       <div className={styles.photo}>
         <Image src={IconPhoto} width={100} height={100} />
+        <div className={styles.upload}>
+          <button onClick={handleClickUpload}>
+            Escolher Arquivo
+          </button>
+          <div>
+            {fileName}
+          </div>
+          
+        </div>
+        
         <input 
           type="file" 
-          // placeholder="Insira o link da capa" 
+          ref={hiddenFileInput} 
           className={styles.link}
           onChange={handleUploadPhoto}
         />
@@ -68,7 +91,7 @@ export function Form({ movies, setMovies }) {
           </div>
           <div>
             <input 
-              type="text" 
+              type="number"
               placeholder="Insira o ano de criação" 
               className={[styles.year, styles.myInput].join(' ')} 
               onChange={(e) => {setYear(e.target.value)}}
@@ -88,7 +111,7 @@ export function Form({ movies, setMovies }) {
         </div>
 
         <div className={styles.submitButton}>
-          <button type="submit">
+          <button type="submit" disabled={handleDisabledSubmit()}>
             Salvar
           </button>
         </div>
