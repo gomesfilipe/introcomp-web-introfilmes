@@ -24,7 +24,16 @@ export function Form({ movies, setMovies }) {
   function handleSubmitForm(event) {
     event.preventDefault()
 
-    if(!photo) return
+    if(!name || !year || !evaluation || !description || !photo) {
+      alert('Há campos em branco!')
+      return
+    }
+
+    if(isNaN(year) || isNaN(evaluation) || year < 0 || evaluation < 0) {
+      alert('A avaliação e o ano devem ser números não negativos.')
+      return
+    }
+
     const newMovie = {
       name,
       year, 
@@ -41,7 +50,7 @@ export function Form({ movies, setMovies }) {
         <Image src={IconPhoto} width={100} height={100} />
         <input 
           type="file" 
-          placeholder="Insira o link da capa" 
+          // placeholder="Insira o link da capa" 
           className={styles.link}
           onChange={handleUploadPhoto}
         />
@@ -49,19 +58,25 @@ export function Form({ movies, setMovies }) {
 
       <div className={styles.data}>
         <div className={styles.dataUp}>
-          <input 
-            type="text" 
-            placeholder="Insira o nome" 
-            className={[styles.name, styles.myInput].join(' ')} 
-            onChange={(e) => {setName(e.target.value)}}
-          />
-          <input 
-            type="text" 
-            placeholder="Insira o ano de criação" 
-            className={[styles.year, styles.myInput].join(' ')} 
-            onChange={(e) => {setYear(e.target.value)}}
-          />
-          <Stars readOnly={false} setEvaluation={setEvaluation} />
+          <div>
+            <input 
+              type="text" 
+              placeholder="Insira o nome" 
+              className={[styles.name, styles.myInput].join(' ')} 
+              onChange={(e) => {setName(e.target.value)}}
+            />
+          </div>
+          <div>
+            <input 
+              type="text" 
+              placeholder="Insira o ano de criação" 
+              className={[styles.year, styles.myInput].join(' ')} 
+              onChange={(e) => {setYear(e.target.value)}}
+            />
+          </div>
+          <div>
+            <Stars readOnly={false} setEvaluation={setEvaluation} />
+          </div>
         </div>
         
         <div className={styles.dataDown}>

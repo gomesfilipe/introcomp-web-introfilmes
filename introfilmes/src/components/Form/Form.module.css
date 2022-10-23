@@ -16,20 +16,29 @@
   padding: 20px;
   /* width: 100%; */
   justify-content: space-between;
+  align-items: center;
   /* position: relative; */
 }
 
 .data {
   background-color: #217DA5;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr 1fr; */
   color: white;
   padding: 0px 19px;
+  /* overflow-x: hidden; */
   /* width: 100%; */
+
 }
 
 .dataUp {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  width: 100%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 
 .dataDown {
@@ -58,7 +67,7 @@
 }
 
 .name {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .year {
@@ -72,7 +81,7 @@
 
 .myInput {
   background-color: transparent;
-  border: 0px;
+  /* border: 0px; */
   color: #89BFCC;
   font-style: italic;
 }
