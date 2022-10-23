@@ -11,10 +11,20 @@ export function Form({ movies, setMovies }) {
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
   
+  function handleUploadPhoto(event) {
+    const reader = new FileReader()
+
+    reader.onload = function (e) {
+      setPhoto(e.target.result)
+    } 
+
+    reader.readAsDataURL(event.target.files[0])
+  }
+
   function handleSubmitForm(event) {
-    console.log(event)
-    console.log('entrou funcao')
     event.preventDefault()
+
+    if(!photo) return
     const newMovie = {
       name,
       year, 
@@ -30,10 +40,10 @@ export function Form({ movies, setMovies }) {
       <div className={styles.photo}>
         <Image src={IconPhoto} width={100} height={100} />
         <input 
-          type="text" 
+          type="file" 
           placeholder="Insira o link da capa" 
           className={styles.link}
-          onChange={(e) => {setPhoto(e.target.value)}}
+          onChange={handleUploadPhoto}
         />
       </div>
 
@@ -63,9 +73,7 @@ export function Form({ movies, setMovies }) {
         </div>
 
         <div className={styles.submitButton}>
-          <button 
-            type="submit" 
-          >
+          <button type="submit">
             Salvar
           </button>
         </div>

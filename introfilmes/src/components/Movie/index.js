@@ -8,7 +8,6 @@ export function Movie({ name, year, description, photo, evaluation, movies, setM
     return `${src}`;
   }
   
-  console.log('movie: ', index)
   return (
     <Popover className={styles.popover}>
       <Popover.Button className={styles.popoverButton}>
