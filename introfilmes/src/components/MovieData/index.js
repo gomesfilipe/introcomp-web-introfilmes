@@ -6,9 +6,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Stars } from '../Stars'
 
-export function MovieData({ name, year, description, photo, evaluation, movies, setMovies, index }) {
+export function MovieData({ name, year, description, photo, evaluation, movies, setMovies, index, onDelete }) {
   function handleClickDeleteButton() {
     setMovies(movies.filter((movie, indexMovie) => indexMovie !== index))
+    onDelete()
   }
   
   return (

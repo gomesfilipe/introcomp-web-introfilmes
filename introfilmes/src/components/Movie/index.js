@@ -21,16 +21,19 @@ export function Movie({ name, year, description, photo, evaluation, movies, setM
       </Popover.Button>
 
       <Popover.Panel>
-        <MovieData 
-          name={name} 
-          year={year} 
-          description={description} 
-          photo={photo} 
-          evaluation={evaluation}
-          movies={movies}
-          setMovies={setMovies}
-          index={index}
-        />
+        {({ close }) => (
+          <MovieData 
+            name={name} 
+            year={year} 
+            description={description} 
+            photo={photo} 
+            evaluation={evaluation}
+            movies={movies}
+            setMovies={setMovies}
+            index={index}
+            onDelete={() => {close()}}
+          />
+        )}
       </Popover.Panel>
     </Popover>
   )
