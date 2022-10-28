@@ -1,2 +1,4 @@
 /node_modules
 testDatabase.js
+.env
+package-lock.json
