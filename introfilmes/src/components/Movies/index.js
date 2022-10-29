@@ -2,6 +2,7 @@ import styles from './Movies.module.css'
 import { Card } from "../Card";
 import { useEffect, useState } from 'react';
 import { Movie } from '../Movie';
+import { api } from '../../lib/api'
 
 const moviesList = [
   {
@@ -74,8 +75,16 @@ export function Movies() {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    setMovies(moviesList)
-  } , [moviesList])
+    async function getMovies() {
+      const list = await api.get('/movies/all')
+      return list
+    }
+
+    getMovies()
+      .then(res => {
+        setMovies(res.data)
+      })
+  } , [movies])
 
   return (
     <div className={styles.movies}>
@@ -85,7 +94,7 @@ export function Movies() {
             movies.map((movie, index) => {
               return (
                 <Movie 
-                  key={index} 
+                  key={movie.id} 
                   name={movie.name} 
                   year={movie.year} 
                   description={movie.description} 
@@ -94,6 +103,7 @@ export function Movies() {
                   movies = {movies}
                   setMovies={setMovies}
                   index={index}
+                  id={movie.id}
                 />
               ) 
             })

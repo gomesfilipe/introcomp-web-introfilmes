@@ -3,6 +3,7 @@ import IconPhoto from '../../assets/icons/icon-photo.svg'
 import Image from 'next/image'
 import styles from './Form.module.css'
 import { useRef, useState } from 'react'
+import { api } from '../../lib/api'
 
 export function Form({ movies, setMovies }) {
   const [name, setName] = useState('')
@@ -29,7 +30,7 @@ export function Form({ movies, setMovies }) {
     setFileName(event.target.files[0].name)
   }
 
-  function handleSubmitForm(event) {
+  async function handleSubmitForm(event) {
     event.preventDefault()
 
     if(!name || !year || !evaluation || !description || !photo) {
@@ -48,6 +49,12 @@ export function Form({ movies, setMovies }) {
       evaluation,
       description,
       photo
+    }
+
+    try {
+      await api.post('/movies', newMovie)
+    } catch(err) {
+      alert('Erro ao cadastrar filme.')
     }
     setMovies([...movies, newMovie])
   }

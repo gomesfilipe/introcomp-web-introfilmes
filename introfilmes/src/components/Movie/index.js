@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { MovieData } from '../MovieData';
 import { Popover } from '@headlessui/react';
 
-export function Movie({ name, year, description, photo, evaluation, movies, setMovies, index }) {
+export function Movie({ name, year, description, photo, evaluation, movies, setMovies, index, id }) {
 
   const myLoader=({src})=>{
     return `${src}`;
@@ -33,6 +33,7 @@ export function Movie({ name, year, description, photo, evaluation, movies, setM
             setMovies={setMovies}
             index={index}
             onDelete={() => {close()}}
+            id={id}
           />
         )}
       </Popover.Panel>
