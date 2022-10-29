@@ -53,6 +53,7 @@ export function Form({ movies, setMovies }) {
 
     try {
       await api.post('/movies', newMovie)
+      alert(`${name} cadastrado com sucesso!`)
     } catch(err) {
       alert('Erro ao cadastrar filme.')
     }
