@@ -94,7 +94,7 @@ export function Movies() {
             movies.map((movie, index) => {
               return (
                 <Movie 
-                  key={movie.id} 
+                  key={index} 
                   name={movie.name} 
                   year={movie.year} 
                   description={movie.description} 

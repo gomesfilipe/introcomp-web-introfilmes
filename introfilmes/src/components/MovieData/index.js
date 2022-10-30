@@ -7,7 +7,7 @@ import { api } from '../../lib/api'
 export function MovieData({ name, year, description, photo, evaluation, movies, setMovies, index, onDelete, id }) {
   async function handleClickDeleteButton() {
     try {
-      alert('Você tem certeza que quer apagar este filme?')
+      if(!confirm(`Você tem certeza que quer apagar ${name}?`)) return
       await api.delete(`/movies/${id}`)
       setMovies(movies.filter((movie, indexMovie) => indexMovie !== index))
       onDelete() // Fecha o popover.

@@ -28,7 +28,7 @@ export function Form({ movies, setMovies }) {
   }
   
   function handleDisabledSubmit() {
-    return !name || !year || !evaluation || !description || !photo
+    return !name || !year || !description || !photo
   }
 
   function handleUploadPhoto(event) {
@@ -40,7 +40,7 @@ export function Form({ movies, setMovies }) {
   async function handleSubmitForm(event) {
     event.preventDefault()
 
-    if(!name || !year || !evaluation || !description || !photo) {
+    if(!name || !year || !description || !photo) {
       alert('Há campos em branco!')
       return
     }
