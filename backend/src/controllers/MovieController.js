@@ -14,8 +14,20 @@ module.exports = {
   },
 
   async create(req, res) {
+    // const { name, year, evaluation, description } = req.body
+    // const photo = `/${req.file.path}`
+    
+    // const movie = {
+    //   name,
+    //   year,
+    //   evaluation,
+    //   description,
+    //   photo
+    // }
+    console.log(req.body.photo.length)
     const movieRepository = new MovieRepository()
     const { id } = await movieRepository.create(req.body)
+    // const { id } = await movieRepository.create(movie)
     return res.json({ id })
   },
 

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from './Form.module.css'
 import { useRef, useState } from 'react'
 import { api } from '../../lib/api'
+import FormData from 'form-data'
 
 export function Form({ movies, setMovies }) {
   const [name, setName] = useState('')
@@ -14,20 +15,26 @@ export function Form({ movies, setMovies }) {
   
   const [fileName, setFileName] = useState('')
   const hiddenFileInput = useRef(null);
+  const [photoBase64, setPhotoBase64] = useState('')
 
+  function parseFileToBase64(file) {
+    const reader = new FileReader()
+
+    reader.onload = function (e) {
+      setPhotoBase64(e.target.result) // Imagem em base64
+    } 
+
+    reader.readAsDataURL(file)
+  }
+  
   function handleDisabledSubmit() {
     return !name || !year || !evaluation || !description || !photo
   }
 
   function handleUploadPhoto(event) {
-    const reader = new FileReader()
-
-    reader.onload = function (e) {
-      setPhoto(e.target.result)
-    } 
-    
-    reader.readAsDataURL(event.target.files[0])
+    parseFileToBase64(event.target.files[0])
     setFileName(event.target.files[0].name)
+    setPhoto(event.target.files[0])
   }
 
   async function handleSubmitForm(event) {
@@ -48,11 +55,19 @@ export function Form({ movies, setMovies }) {
       year, 
       evaluation,
       description,
-      photo
+      photo: photoBase64
     }
+
+    // const form = new FormData()
+    // form.append('name', name)
+    // form.append('year', year)
+    // form.append('evaluation', evaluation)
+    // form.append('description', description)
+    // form.append('photo', photo)
 
     try {
       await api.post('/movies', newMovie)
+      // await api.post('/movies', form)
       alert(`${name} cadastrado com sucesso!`)
     } catch(err) {
       alert('Erro ao cadastrar filme.')

@@ -10,7 +10,7 @@ exports.up = function(knex) {
     table.string('description').notNullable()
     table.integer('year').notNullable()
     table.integer('evaluation').notNullable()
-    table.string('photo').notNullable()
+    table.text('photo', 'longtext').notNullable()
   })
 };
 

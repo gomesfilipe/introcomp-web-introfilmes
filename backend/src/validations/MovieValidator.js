@@ -1,5 +1,4 @@
 const { celebrate, Segments, Joi } = require('celebrate')
-const { getByFilter } = require('../controllers/MovieController')
 
 module.exports = {
   create(req, res, next) {
