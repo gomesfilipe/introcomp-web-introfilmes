@@ -60,3 +60,14 @@
 .deleteButton:hover {
   opacity: 0.8;
 }
+
+.arrow {
+  height: 19px;
+  width: 19px;
+  background-color: red;
+  background-color: #F4C708;
+  position: absolute;
+  z-index: 999;
+  transform: rotate(45deg) translateY(-10px);
+  text-align: center;
+}

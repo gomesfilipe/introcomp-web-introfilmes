@@ -2,8 +2,11 @@ import styles from './Movie.module.css'
 import Image from 'next/image'
 import { MovieData } from '../MovieData';
 import { Popover } from '@headlessui/react';
+import { useRef } from 'react';
 
 export function Movie({ name, year, description, photo, evaluation, movies, setMovies, index, id }) {
+  const movieRef = useRef(null)
+  // console.log(movieRef)
 
   const myLoader=({src})=>{
     return `${src}`;
@@ -11,7 +14,7 @@ export function Movie({ name, year, description, photo, evaluation, movies, setM
   
   return (
     <Popover className={styles.popover}>
-      <Popover.Button className={styles.popoverButton}>
+      <Popover.Button className={styles.popoverButton} ref={movieRef}>
         <Image 
           className={styles.photo} 
           loader={myLoader} 
@@ -34,6 +37,7 @@ export function Movie({ name, year, description, photo, evaluation, movies, setM
             index={index}
             onDelete={() => {close()}}
             id={id}
+            movieRef={movieRef}
           />
         )}
       </Popover.Panel>
