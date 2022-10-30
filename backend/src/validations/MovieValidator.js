@@ -8,7 +8,7 @@ module.exports = {
         description: Joi.string().required(),
         year: Joi.number().integer().positive().required(),
         evaluation: Joi.number().integer().min(0).max(5).required(),
-        photo: Joi.string().required()
+        photo: Joi.string().regex(/^(data:image\/(png|jpg|jpeg)\;base64|)/).required()
       })
     })
 
