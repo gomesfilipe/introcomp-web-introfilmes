@@ -1,6 +1,6 @@
 const express = require('express')
-const multer = require('multer')
-const upload = multer({ dest: 'uploads/' })
+// const multer = require('multer')
+// const upload = multer({ dest: 'uploads/' })
 
 const MovieValidator = require('./validations/MovieValidator')
 const MovieController = require('./controllers/MovieController')
