@@ -3,6 +3,7 @@ import { Card } from "../Card";
 import { useEffect, useState } from 'react';
 import { Movie } from '../Movie';
 import { api } from '../../lib/api'
+import { Filter } from '../Filter';
 
 const moviesList = [
   {
@@ -84,11 +85,15 @@ export function Movies() {
       .then(res => {
         setMovies(res.data)
       })
-  } , [movies])
+  } , [])
 
   return (
     <div className={styles.movies}>
-      <h2>CATÁLOGO</h2>
+      <div className={styles.header}>
+        <Filter setMovies={setMovies}/>
+        <h2>CATÁLOGO</h2>
+      </div>
+      
       <div className={styles.cards}>
           {
             movies.map((movie, index) => {

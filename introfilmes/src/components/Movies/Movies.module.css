@@ -4,7 +4,14 @@
   padding-bottom: 15px;
 }
 
-.movies h2 {
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.movies div h2 {
   font-size: 30px;
   margin: 0;
   color: white;

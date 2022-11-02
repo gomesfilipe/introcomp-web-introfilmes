@@ -31,9 +31,9 @@
   font-weight: bold;
 }
 
-/* .myInput:focus {
+.myInput:focus {
   outline: none;
-} */
+}
 
 .data input::-webkit-outer-spin-button, .data input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -63,15 +63,21 @@
 
 .name {
   font-size: 40px;
-  /* padding: 5px; */
 }
 
 .year {
   font-size: 17px;
-  /* padding: 5px; */
 }
 
 .evaluation {
   font-size: 17px;
-  /* padding: 5px; */
+}
+
+.arrow {
+  height: 19px;
+  width: 19px;
+  background-color: #F4C708;
+  position: absolute;
+  z-index: 999;
+  transform: rotate(45deg) translateY(-10px);
 }

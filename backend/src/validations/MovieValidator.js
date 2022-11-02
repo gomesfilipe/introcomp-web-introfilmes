@@ -22,7 +22,7 @@ module.exports = {
         yearUp: Joi.number().integer().positive(),
         evaluationDown: Joi.number().integer().min(0).max(5),
         evaluationUp: Joi.number().integer().min(0).max(5),
-        name: Joi.string()
+        name: Joi.string().allow('')
       })
     })
 

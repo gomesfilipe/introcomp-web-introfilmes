@@ -5,6 +5,7 @@ import { Header } from '../components/Header'
 import { Movies } from '../components/Movies'
 import { Title } from '../components/Title'
 import styles from '../styles/Home.module.css'
+import { Filter } from '../components/Filter'
 
 export default function Home() {
   return (
@@ -18,7 +19,6 @@ export default function Home() {
       <Header />
       <Title />
       <Movies />
-      <FormFilter />
       <Footer />
     </div>
   )

@@ -6,7 +6,6 @@ import { useRef } from 'react';
 
 export function Movie({ name, year, description, photo, evaluation, movies, setMovies, index, id }) {
   const movieRef = useRef(null)
-  // console.log(movieRef)
 
   const myLoader=({src})=>{
     return `${src}`;

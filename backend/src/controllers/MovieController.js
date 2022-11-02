@@ -24,7 +24,6 @@ module.exports = {
     //   description,
     //   photo
     // }
-    console.log(req.body.photo.length)
     const movieRepository = new MovieRepository()
     const { id } = await movieRepository.create(req.body)
     // const { id } = await movieRepository.create(movie)
