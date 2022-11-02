@@ -1,0 +1,77 @@
+.container {
+  background-color: #F4C708;
+  padding-top: 19px;
+  position: absolute;
+  z-index: 1;
+  /* right: 0px; */
+  /* left: 0px; */
+  height: 150px;
+  border-radius: 5px;
+}
+
+.data {
+  display: grid;
+  background-color: #217DA5;
+  color: white;
+  padding: 5px 19px;
+  height: 150px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.myInput {
+  background-color: transparent;
+  border: 0px;
+  color: #89BFCC;
+  font-style: italic;
+}
+
+.myInput::placeholder {
+  color: #89BFCC;
+  font-weight: bold;
+}
+
+/* .myInput:focus {
+  outline: none;
+} */
+
+.data input::-webkit-outer-spin-button, .data input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.submitButton {
+  text-align: right;
+  padding: 5px;
+}
+
+.submitButton button {
+  background-color: #F4C708;
+  border: 0px;
+  color: #217DA5;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 172px;
+  height: 25px;
+  text-transform: uppercase;
+}
+
+.submitButton button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 40px;
+  /* padding: 5px; */
+}
+
+.year {
+  font-size: 17px;
+  /* padding: 5px; */
+}
+
+.evaluation {
+  font-size: 17px;
+  /* padding: 5px; */
+}

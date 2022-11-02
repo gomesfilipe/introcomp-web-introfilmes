@@ -49,6 +49,7 @@
 
 .submitButton button:hover:not(:disabled) {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .submitButton {
@@ -133,6 +134,7 @@
 
 .upload button:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .arrow {

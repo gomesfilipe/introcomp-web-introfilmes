@@ -1,12 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Card } from '../components/Card'
+import { FormFilter } from '../components/FormFilter'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
-import { Movie } from '../components/Movie'
-import { MovieData } from '../components/MovieData'
 import { Movies } from '../components/Movies'
-import { Stars } from '../components/Stars'
 import { Title } from '../components/Title'
 import styles from '../styles/Home.module.css'
 
@@ -22,6 +18,7 @@ export default function Home() {
       <Header />
       <Title />
       <Movies />
+      <FormFilter />
       <Footer />
     </div>
   )
