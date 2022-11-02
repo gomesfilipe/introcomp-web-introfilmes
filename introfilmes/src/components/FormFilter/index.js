@@ -29,7 +29,6 @@ export function FormFilter({ setMovies, buttonRef }) {
     // }
     
     try {
-      // const res = await api.get(`/movies/filter?name=${name}&yearDown=${yearDown}&yearUp=${yearUp}&evaluationDown=${evaluationDown}&evaluationUp=${evaluationUp}`)
       const res = await api.get(`/movies/filter`, {
         params: {
           name: name ? name : undefined,

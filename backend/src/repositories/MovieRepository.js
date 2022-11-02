@@ -15,11 +15,6 @@ module.exports = class movieRepository {
     return { id }
   }
 
-  async get() {
-    const movies = await connection('movies')
-    return movies
-  }
-
   async getByFilters(filters) {
     const { name, evaluationDown, evaluationUp, yearDown, yearUp } = filters
     const movies = await connection('movies')

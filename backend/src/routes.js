@@ -6,7 +6,6 @@ const MovieValidator = require('./validations/MovieValidator')
 const MovieController = require('./controllers/MovieController')
 const router = express.Router()
 
-router.get('/movies/all', MovieController.get)
 router.get('/movies/filter', MovieValidator.getByFilter, MovieController.getByFilter)
 router.post('/movies', /*upload.single('photo'),*/ MovieValidator.create, MovieController.create)
 router.delete('/movies/:id', MovieController.delete)

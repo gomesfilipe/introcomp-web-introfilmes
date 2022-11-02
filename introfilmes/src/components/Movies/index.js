@@ -77,7 +77,7 @@ export function Movies() {
 
   useEffect(() => {
     async function getMovies() {
-      const list = await api.get('/movies/all')
+      const list = await api.get('/movies/filter')
       return list
     }
 

@@ -1,12 +1,6 @@
 const MovieRepository = require('../repositories/MovieRepository')
 
 module.exports = {
-  async get(req, res) {
-    const movieRepository = new MovieRepository()
-    const movies = await movieRepository.get()
-    return res.json(movies)
-  },
-
   async getByFilter(req, res) {
     const movieRepository = new MovieRepository()
     const movies = await movieRepository.getByFilters(req.query)
