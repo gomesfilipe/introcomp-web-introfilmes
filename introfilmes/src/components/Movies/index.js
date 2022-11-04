@@ -87,11 +87,17 @@ export function Movies() {
       })
   } , [])
 
+  async function handleClickButton() {
+    const res = await api.get('/movies/filter')
+    setMovies(res.data)
+  }
+
   return (
     <div className={styles.movies}>
       <div className={styles.header}>
         <Filter setMovies={setMovies}/>
         <h2>CATÁLOGO</h2>
+        <button className={styles.button} onClick={handleClickButton}>Limpar Filtros</button>
       </div>
       
       <div className={styles.cards}>
