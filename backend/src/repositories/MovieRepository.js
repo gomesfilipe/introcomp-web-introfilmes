@@ -21,8 +21,8 @@ module.exports = class movieRepository {
       .where(query => {
         if(yearDown) query.where('year', '>=', yearDown)
         if(yearUp) query.where('year', '<', yearUp)
-        if(evaluationDown) query.where('evaluation', '>=', evaluationDown)
-        if(evaluationUp) query.where('evaluation', '<=', evaluationUp)
+        if(evaluationDown || evaluationDown === 0) query.where('evaluation', '>=', evaluationDown)
+        if(evaluationUp || evaluationUp === 0) query.where('evaluation', '<=', evaluationUp)
         if(name) query.where('name', 'like', `${name}%`)
       })
     

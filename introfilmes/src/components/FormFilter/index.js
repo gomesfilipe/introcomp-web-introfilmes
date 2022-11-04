@@ -3,11 +3,13 @@ import { api } from '../../lib/api'
 import styles from './FormFilter.module.css'
 
 export function FormFilter({ setMovies, buttonRef }) {
-  const [name, setName] = useState('')
-  const [yearDown, setYearDown] = useState(1)
-  const [yearUp, setYearUp] = useState(3000)
-  const [evaluationDown, setEvaluationDown] = useState(0)
-  const [evaluationUp, setEvaluationUp] = useState(5)
+  const [filters, setFilters] = useState({ 
+    name: '', 
+    yearDown: '',
+    yearUp: '',
+    evaluationDown: '',
+    evaluationUp: ''
+  })
   
   const arrowRef = useRef(null)
   const [left, setLeft] = useState(null)
@@ -20,28 +22,31 @@ export function FormFilter({ setMovies, buttonRef }) {
 
   async function handleSubmitFilter(event) {
     event.preventDefault()
-    // const queries = {
-    //   name,
-    //   yearDown,
-    //   yearUp,
-    //   evaluationDown,
-    //   evaluationUp
-    // }
     
+    const innerFilters = {
+      ...filters
+    }
+
+    for (let prop in innerFilters) {
+      if (innerFilters[prop] === null || innerFilters[prop] === undefined || innerFilters[prop] === '') {
+        delete innerFilters[prop];
+      }
+    }
+
+    if(innerFilters.yearDown)  innerFilters.yearDown = Number(innerFilters.yearDown)
+    if(innerFilters.yearUp) innerFilters.yearUp = Number(innerFilters.yearUp)
+    if(innerFilters.evaluationDown) innerFilters.evaluationDown = Number(innerFilters.evaluationDown)
+    if(innerFilters.evaluationUp) innerFilters.evaluationUp = Number(innerFilters.evaluationUp)
+
     try {
       const res = await api.get(`/movies/filter`, {
         params: {
-          name: name ? name : undefined,
-          yearDown: yearDown ? yearDown : undefined,
-          yearUp: yearUp ? yearUp : undefined,
-          evaluationDown: evaluationDown ? evaluationDown : undefined,
-          evaluationUp: evaluationUp ? evaluationUp : undefined,
+          ...innerFilters
         }
       })
       
       setMovies(res.data)
     } catch(err) {
-      console.log(err)
       alert('Erro ao filtrar filmes.')
     }
   }
@@ -64,7 +69,7 @@ export function FormFilter({ setMovies, buttonRef }) {
               type="text" 
               placeholder='Nome do filme'
               className={[styles.name, styles.myInput].join(' ')}
-              onChange={(e) => {setName(e.target.value)}}
+              onChange={(e) => {setFilters({...filters, name: e.target.value })}}
             />
           </div>
 
@@ -73,13 +78,13 @@ export function FormFilter({ setMovies, buttonRef }) {
               type="number" 
               placeholder='Início do período (ano)'
               className={[styles.year, styles.myInput].join(' ')}
-              onChange={(e) => {setYearDown(Number(e.target.value))}}
+              onChange={(e) => {setFilters({...filters, yearDown: e.target.value })}}
             />
             <input 
               type="number" 
               placeholder='Final do período (ano)'
               className={[styles.year, styles.myInput].join(' ')}
-              onChange={(e) => {setYearUp(Number(e.target.value))}}
+              onChange={(e) => {setFilters({...filters, yearUp: e.target.value })}}
             />
           </div>
 
@@ -88,13 +93,13 @@ export function FormFilter({ setMovies, buttonRef }) {
               type="number" 
               placeholder='Piso avaliação (0-5)'
               className={[styles.evaluation, styles.myInput].join(' ')}
-              onChange={(e) => {setEvaluationDown(Number(e.target.value))}}
+              onChange={(e) => {setFilters({...filters, evaluationDown: e.target.value })}}
             />
             <input 
               type="number" 
               placeholder='Teto avaliação (0-5)'
               className={[styles.evaluation, styles.myInput].join(' ')}
-              onChange={(e) => {setEvaluationUp(Number(e.target.value))}}
+              onChange={(e) => {setFilters({...filters, evaluationUp: e.target.value })}}
             />
           </div>
 
