@@ -55,7 +55,7 @@ npm start
 O servidor rodará na porta que estiver indicada no arquivo **.env**.
 
 ## Rodando o Frontend
-Acesse o diretório **introfilmes** e efetue o seguintes passo:
+Acesse o diretório **introfilmes** e efetue o seguintes passos:
 
 * Execute o comando abaixo no terminal:
 
