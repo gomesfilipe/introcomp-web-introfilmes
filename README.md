@@ -40,6 +40,15 @@ npm i
 cd ..
 ```
 
+* Na pasta **backend**, execute o seguinte comando:
+
+```
+npx knex migrate:latest
+```
+
+Um arquivo chamado *db.sqlite* será criado na pasta **backend/src/database**.
+É nele que os filmes cadastrados ficarão armazenados. 
+
 ## Rodando o Backend
 
 Acesse o diretório **backend** e efetue os seguintes passos:

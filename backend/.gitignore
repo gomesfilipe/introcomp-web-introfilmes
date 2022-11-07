@@ -2,3 +2,4 @@
 testDatabase.js
 .env
 package-lock.json
+.sqlite
