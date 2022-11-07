@@ -46,7 +46,7 @@ cd ..
 npx knex migrate:latest
 ```
 
-Um arquivo chamado *db.sqlite* será criado na pasta **backend/src/database**.
+Um arquivo chamado **db.sqlite** será criado na pasta **backend/src/database**.
 É nele que os filmes cadastrados ficarão armazenados. 
 
 ## Rodando o Backend
